@@ -102,124 +102,57 @@ header.sticky .navigation li a {
     text-shadow: #1D355B 3px 3px 2px;
 }
 
-#topDiv {
-    width: 100%;
-}
-
-#banniere {
-    width: 100%;
-    z-index: 0;
-}
-
-h1 {
+.formBx {
+    width: 40%;
+    margin: 50px auto;
+    border: 15px solid #fff;
+    box-shadow: 0 5px 35px rgba(0,0,0,0.08);
+    display: flex;
+    justify-content: center;
     text-align: center;
-    z-index: 10;
-}
-
-article {
-    margin: 0 auto;
-    width: 80%;
-    border: darkgray 2px solid;
-    padding: 10px;
-    border-radius: 20px;
-    margin-top: 1%;
-    background-color: white;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
-}
-
-#imgPlat {
-    text-align: center;
-}
-
-#imgPlat img {
-    width: 85%;
-}
-
-.infosPlats {
-    margin: 0 auto;
-    width: 85%;
-    border: darkgray 2px solid;
-}
-
-#flex {
-    display: flex;
-    flex-direction: column;
-}
-
-.timers {
-    display: inline-flex;
-    justify-content: space-around;
-}
-
-.separateur {
-    border: darkgray solid 1px;
-}
-
-.infosBas {
-    display: flex;
-    justify-content: space-around;
-}
-
-.flex {
-    display: flex;
-}
-
-.flex img {
-    margin-left: 2px;
-}
-
-input {
-    height: 1.5em;
-    font-size: 150%;
-    border: solid lightblue 2px;
-}
-
-#InputName {
-    width: 25%;
-
-}
-
-#InputMail {
-    width: 70%;
-
-}
-
-#InputComment {
-    width: 99.5%;
-    height: 10em;
-    border: solid lightblue 2px;
-}
-
-#SubmitInput {
-    justify-content: right;
-}
-
-#divForm {
-    display: flex;
-    justify-content: space-between;
 }
 
 form {
-    justify-content: space-between;
+    width: 100%;
+    padding: 0 50px;
 }
 
-.UsersComments img{
-    height: 64px;
-    width: 64px;
-    border-radius: 100%;
-    margin: 0.7em;
-}
-
-.UsersComments {
+form div {
+    width: 100%;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
 }
 
-.UsersInfos h6{
-    margin-top: 0.01em;
+form div input,
+form div textarea,
+form div select {
+    width: 150px;
+    text-align: start;
+    padding: 5px 0 5px 10px;
 }
 
-.UsersInfos h4{
-    margin-bottom: 0.01em;
+input[type="submit"] {
+    font-size: 1em;
+    font-weight: 400;
+    width: 20%;
+    margin: 0 auto;
+    color: #fff;
+    background: #6D9CD2;
+    display: inline-block;
+    padding: 10px 0;
+    margin-top: 25px;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 2px;
+    transition: 0.5s;
+    border: 3px solid #fff;
+    cursor: pointer;
+}
+input[type="submit"]:hover {
+    transform: translateY(-5px);
+    background: #4777A6;
 }
 
 @media (max-width: 991px) {
@@ -277,6 +210,4 @@ form {
     header.sticky .menuToggle {
         filter: invert(0);
     }
-
-    
 }

@@ -68,17 +68,17 @@
     <section class="menu" id="menu">
         <div class="content">
         {% for recette in recettes %}
-            <a href="{{ path('afficher_recette',{'id' : recette.id}) }}" class="box">
+            <div class="box">
                 <div class="imgBx">
-                    <img src="{{ asset('image/' ~recette.photo) }}" alt="">
+                    <a href="{{ path('afficher_recette',{'id' : recette.id}) }}"><img src="{{ asset('image/' ~recette.photo) }}" alt=""></a>
                 </div>
                 <div class="text">
-                    <h3>{{ asset(recette.nom) }}</h3>
+                    <a href="{{ path('afficher_recette',{'id' : recette.id}) }}"><h3>{{ asset(recette.nom) }}</h3></a>
                 </div>
-            </a>
+            </div>
         {% endfor %}
         </div>
-        <div class="title"><a href="" class="btn">View All</a></div>
+        <div class="title"><a href="{{ path("recettes") }}" class="btn">View All</a></div>
     </section>
 
     <section class="product" id="product">
@@ -86,7 +86,7 @@
         {% for producteur in producteurs %}
             <a href="{{ path('afficher_producteur',{'id' : producteur.id}) }}" class="box">
                 <div class="imgBx">
-                    <img src="{{ asset('image/' ~producteur.photo) }}" alt="">
+                    <img src="{{ asset('image/' ~ producteur.photo) }}" alt="">
                 </div>
                 <div class="text">
                     <h3>{{ producteur.nom }} {{ producteur.prenom }}</h3>

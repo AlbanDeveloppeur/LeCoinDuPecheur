@@ -33,7 +33,7 @@ class Recette
     private $categorie;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="string", length=255)
      */
     private $difficulte;
 
@@ -103,12 +103,12 @@ class Recette
         return $this;
     }
 
-    public function getDifficulte(): ?int
+    public function getDifficulte(): ?string
     {
         return $this->difficulte;
     }
 
-    public function setDifficulte(int $difficulte): self
+    public function setDifficulte(string $difficulte): self
     {
         $this->difficulte = $difficulte;
 

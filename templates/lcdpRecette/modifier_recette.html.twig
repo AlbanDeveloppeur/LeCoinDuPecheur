@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/style_modif_recette.css')}}">
+{% endblock %}
+
+{% block title %}Modification de la recette : {{ asset(recette.nom) }}{% endblock %}
+
+{% block body %}
+
+    <section class="banner" id="banner">
+        <div class="content">
+        {% if isModif %}
+            <h2>Modifier la recette : {{ asset(recette.nom) }}</h2>
+        {% else %}
+            <h2>Ajouter une recette :<h2>
+        {% endif %}
+        </div>
+    </section>
+
+    <div class="formBx"> 
+    {{ form_start(form)}}
+        {{ form_row(form.nom, {'attr': {'class':'nom'},"label":"Nom du plat :"}) }}
+        {{ form_row(form.type, {"label":"Type de plat :"}) }}
+        {{ form_row(form.categorie, {"label":"Catégorie du plat :"}) }}
+        {{ form_row(form.difficulte, {"label":"Difficulte du plat :"}) }}
+        {{ form_row(form.description, {"label":"Description du plat :"}) }}
+        {{ form_row(form.photo, {"label":"Photo du plat :"}) }}
+        {{ form_row(form.preparation, {"label":"Temps de préparation du plat en min :"}) }}
+        {{ form_row(form.repos, {"label":"Temps de repos du plat en min :"}) }}
+        {{ form_row(form.cuisson, {"label":"Temps de cuisson du plat en min :"}) }}
+        {{ form_widget(form) }} 
+        {% if isModif %}
+            <input type="submit" value="Modifier">
+        {% else %}
+            <input type="submit" value="Ajouter">
+        {% endif %}>
+    {{ form_end(form)}}
+    </div>
+
+{% endblock %}
