@@ -7,7 +7,9 @@ use App\Entity\Producteur;
 use App\Form\ModifierRecetteType;
 use App\Repository\RecetteRepository;
 use App\Repository\ProducteurRepository;
+use Doctrine\Migrations\Tools\Console\ConsoleLogger;
 use Doctrine\ORM\EntityManagerInterface;
+use phpDocumentor\Reflection\Types\Null_;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -25,7 +27,7 @@ class LcdpController extends AbstractController
             "producteurs" => $producteurs,
         ]);
     }
-
+    
     #[Route('/recettes', name: 'recettes')]
     public function recettes(RecetteRepository $recetteRepository): Response
     {
@@ -35,36 +37,46 @@ class LcdpController extends AbstractController
         ]);
     }
 
+    #[Route('/recettes/ajouter_recette', name: "ajouter_recette")]
+    #[Route('/modifier_recette/{id}', name: "modifier_recette")]
+    public function modificationRecette(Recette $recette=null, Request $request, EntityManagerInterface $entityManager): Response
+    {
+        if ($recette == null) {
+            $recette = new Recette();
+        }
+        $form = $this->createForm(ModifierRecetteType::class, $recette);
+        $form->handleRequest($request);
+        if($form->isSubmitted() && $form->isValid()) {
+            $entityManager->persist($recette);
+            $entityManager->flush();
+            $this->addFlash("Success","La modification a été prise en compte.");
+            return $this->redirectToRoute("recettes");
+        }
+
+        return $this->render('lcdpRecette/modifier_recette.html.twig', [
+            "recette" => $recette,
+            'form' => $form->createView(),
+            'isModif' => $recette->getId() !==NULL,
+        ]);
+    }
+    
     #[Route('/recettes/{id}', name: 'afficher_recette')]
-    public function recettesId(Recette $recette): Response
+    public function afficherRecette(Recette $recette): Response
     {
         return $this->render('lcdpRecette/afficher_recette.html.twig', [
             'recette' => $recette,
         ]);
     }
 
-    #[Route('/recettes/importer_recette', name: 'importer_recette')]
-    #[Route('/modifier_recette/{id}', name: 'modifier_recette')]
-    public function modif_recette(Recette $recette=null, Request $request, EntityManagerInterface $entityManagerInterface): Response
+    #[Route('/supprimer_recette/{id}', name: 'supprimer_recette')]
+    public function supprimerRecette(Recette $recette,  Request $request, EntityManagerInterface $entityManager): Response
     {
-        if(!$recette) {
-            $recette = new Recette();
+        if ($this->isCsrfTokenValid("SUP".$recette->getId(),$request->get('_token'))) {
+            $entityManager->remove($recette);
+            $entityManager->flush();
+            $this->addFlash('succes','La suppresion a été effectué');
+            return $this->redirectToRoute('recettes');
         }
-        $form = $this->createForm(ModifierRecetteType::class, $recette);
-        $form->handleRequest($request);
-        if($form->isSubmitted() && $form->isValid()) {
-            $modif = $recette->getId() !==null;
-            $entityManagerInterface->persist($recette);
-            $entityManagerInterface->flush();
-            
-            $this->addFlash("Success", ($modif)?"La modification a été prise en compte.":"L'ajout de la recette a été prise en compte.");
-            return $this->redirectToRoute("recettes");
-        }
-        return $this->render('lcdpRecette/modifier_recette.html.twig', [
-            'recette' => $recette,
-            'form' => $form->createView(),
-            'isModif' => $recette->getId() !==null,
-        ]);
     }
 
     #[Route('/producteurs/{id}', name: 'afficher_producteur')]

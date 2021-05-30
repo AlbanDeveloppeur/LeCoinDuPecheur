@@ -133,7 +133,8 @@ form div select {
     padding: 5px 0 5px 10px;
 }
 
-input[type="submit"] {
+input[type="submit"],
+.btnRetour {
     font-size: 1em;
     font-weight: 400;
     width: 20%;
@@ -150,7 +151,8 @@ input[type="submit"] {
     border: 3px solid #fff;
     cursor: pointer;
 }
-input[type="submit"]:hover {
+input[type="submit"]:hover,
+.btnRetour {
     transform: translateY(-5px);
     background: #4777A6;
 }

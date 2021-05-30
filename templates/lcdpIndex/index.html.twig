@@ -73,7 +73,7 @@
                     <a href="{{ path('afficher_recette',{'id' : recette.id}) }}"><img src="{{ asset('image/' ~recette.photo) }}" alt=""></a>
                 </div>
                 <div class="text">
-                    <a href="{{ path('afficher_recette',{'id' : recette.id}) }}"><h3>{{ asset(recette.nom) }}</h3></a>
+                    <a href="{{ path('afficher_recette',{'id' : recette.id}) }}"><h3>{{ recette.nom }}</h3></a>
                 </div>
             </div>
         {% endfor %}

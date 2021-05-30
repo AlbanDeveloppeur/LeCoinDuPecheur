@@ -10,16 +10,16 @@
 
     <section class="banner" id="banner">
         <div class="content">
-            <h2>{{ asset(recette.nom) }}</h2>
+            <h2>{{ recette.nom }}</h2>
         </div>
     </section>
 
     <main>
         <article>
             <div>
-                <h1>{{ asset(recette.nom) }}</h1>
-                <h3>{{ asset(recette.description) }}</h3>
-                <p>{{ asset(recette.description) }}</p>
+                <h1>{{ recette.nom }}</h1>
+                <h3>{{ recette.description }}</h3>
+                <p>{{ recette.description }}</p>
                 <div id="imgPlat">
                     <img src="{{ asset('image/' ~recette.photo) }}" alt="">
                 </div>
@@ -33,19 +33,18 @@
                         <h3>Cuisson</h3>
                     </div>
                     <div class="timers">
-                        <p>{{ asset(recette.preparation) }} min</p>
-                        <p>{{ asset(recette.repos) }} min</p>
-                        <p>{{ asset(recette.cuisson) }} min</p>
-                        
+                        <p>{{ recette.preparation }} min</p>
+                        <p>{{ recette.repos }} min</p>
+                        <p>{{ recette.cuisson }} min</p>
                     </div>
                 </div>
                 <div class="separateur"></div>
                 <div class="infosBas">
                     <div>
-                        <h3>Type de plat : {{ asset(recette.categorie)}}</h3>
+                        <h3>Type de plat : {{ recette.categorie }}</h3>
                     </div>
                     <div class="flex">
-                        <h3>Difficulté : {{ asset(recette.difficulte) }}</h3>
+                        <h3>Difficulté : {{ recette.difficulte }}</h3>
                     </div>
                 </div>
             </div>

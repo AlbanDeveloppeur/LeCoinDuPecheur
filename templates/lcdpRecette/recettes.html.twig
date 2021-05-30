@@ -22,13 +22,16 @@
                     <a href="{{ path('afficher_recette',{'id' : recette.id}) }}"><img src="{{ asset('image/' ~recette.photo) }}" alt=""></a>
                 </div>
                 <div class="text">
-                    <a href="{{ path('afficher_recette',{'id' : recette.id}) }}"><h3>{{ asset(recette.nom) }}</h3></a>
-                    <a href="{{ path('modifier_recette',{'id' : recette.id}) }}">Modifier</a>
+                    <a href="{{ path('afficher_recette',{'id' : recette.id}) }}"><h3>{{ recette.nom }}</h3></a>
+                    <div class="navModif">
+                        <a href="{{ path('modifier_recette',{'id' : recette.id}) }}"><i class="fas fa-pen"></i></a>
+                        <a href="{{ path('supprimer_recette',{'id' : recette.id}) }}"><i class="fas fa-times"></i></a>
+                    </div>
                 </div>
             </div>
         {% endfor %}
         </div>
-        <div class="title"><a href="{{ path("importer_recette") }}" class="btn">Ajouter une recette</a></div>
+        <div class="title"><a href="{{ path("ajouter_recette") }}" class="btn">Ajouter une recette</a></div>
     </section>
 
     <script>

@@ -4,14 +4,14 @@
     <link rel="stylesheet" href="{{ asset('css/style_modif_recette.css')}}">
 {% endblock %}
 
-{% block title %}Modification de la recette : {{ asset(recette.nom) }}{% endblock %}
+{% block title %}Modification de la recette : {{ recette.nom }}{% endblock %}
 
 {% block body %}
 
     <section class="banner" id="banner">
         <div class="content">
         {% if isModif %}
-            <h2>Modifier la recette : {{ asset(recette.nom) }}</h2>
+            <h2>Modifier la recette : {{ recette.nom }}</h2>
         {% else %}
             <h2>Ajouter une recette :<h2>
         {% endif %}
@@ -33,8 +33,9 @@
         {% if isModif %}
             <input type="submit" value="Modifier">
         {% else %}
+             <a href="{{ path('recettes') }}" class="btnRetour">Retour</a>
             <input type="submit" value="Ajouter">
-        {% endif %}>
+        {% endif %}
     {{ form_end(form)}}
     </div>
 
