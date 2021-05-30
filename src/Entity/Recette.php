@@ -47,6 +47,21 @@ class Recette
      */
     private $photo;
 
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $preparation;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $repos;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $cuisson;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -120,6 +135,42 @@ class Recette
     public function setPhoto(string $photo): self
     {
         $this->photo = $photo;
+
+        return $this;
+    }
+
+    public function getPreparation(): ?int
+    {
+        return $this->preparation;
+    }
+
+    public function setPreparation(int $preparation): self
+    {
+        $this->preparation = $preparation;
+
+        return $this;
+    }
+
+    public function getRepos(): ?int
+    {
+        return $this->repos;
+    }
+
+    public function setRepos(int $repos): self
+    {
+        $this->repos = $repos;
+
+        return $this;
+    }
+
+    public function getCuisson(): ?int
+    {
+        return $this->cuisson;
+    }
+
+    public function setCuisson(int $cuisson): self
+    {
+        $this->cuisson = $cuisson;
 
         return $this;
     }

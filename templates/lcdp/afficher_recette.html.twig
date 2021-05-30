@@ -1,0 +1,222 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/style_afficher_recette.css')}}">
+{% endblock %}
+
+{% block title %}Le Coins du Pécheur - Recette {{ asset(recette.nom) }}{% endblock %}
+
+{% block body %}
+
+    <section class="banner" id="banner">
+        <div class="content">
+            <h2>{{ asset(recette.nom) }}</h2>
+        </div>
+    </section>
+
+    <main>
+        <article>
+            <div>
+                <h1>{{ asset(recette.nom) }}</h1>
+                <h3>{{ asset(recette.description) }}</h3>
+                <p>{{ asset(recette.description) }}</p>
+                <div id="imgPlat">
+                    <img src="{{ asset('image/' ~recette.photo) }}" alt="">
+                </div>
+                <p></p>
+            </div>
+            <div class="infosPlats">
+                <div id="flex">
+                    <div class="timers">
+                        <h3>Préparation</h3>
+                        <h3>Repos</h3>
+                        <h3>Cuisson</h3>
+                    </div>
+                    <div class="timers">
+                        <p>{{ asset(recette.preparation) }} min</p>
+                        <p>{{ asset(recette.repos) }} min</p>
+                        <p>{{ asset(recette.cuisson) }} min</p>
+                    </div>
+                </div>
+                <div class="separateur"></div>
+                <div class="infosBas">
+                    <div>
+                        <h3>Type de plat : Entrée</h3>
+                    </div>
+                    <div class="flex">
+                        <h3>Difficulté : {{ asset(recette.difficulte) }}</h3>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="separateur"></div>
+            <div>
+                <h2>Ingrédients</h2>
+                <ul>
+                    <li>
+                        <h5>Piment d'Espelette en poudre</h5>
+                        <p></p>
+                    </li>
+                    <li>
+                        <h5>Sel</h5>
+                        <p></p>
+                    </li>
+                    <li>
+                        <h5>Poivre du moulin</h5>
+                        <p></p>
+                    </li>
+                    <li>
+                        <h5>Maïzena diluée dans un peu d'eau</h5>
+                        <p></p>
+                    </li>
+                    <li>
+                        <h5>Huile d'olive</h5>
+                        <p></p>
+                    </li>
+                    <li>
+                        <h5>Vin blanc sec</h5>
+                        <p>15 cl</p>
+                    </li>
+                    <li>
+                        <h5>Moules cuites (= 100 g de chair)</h5>
+                        <p>100 g</p>
+                    </li>
+                    <li>
+                        <h5>Noix de pétoncle (12 noix)</h5>
+                        <p>50 g</p>
+                    </li>
+                    <li>
+                        <h5>Queues de crevettes moyennes</h5>
+                        <p>8</p>
+                    </li>
+                    <li>
+                        <h5>Noix de saint-jacques</h5>
+                        <p>4</p>
+                    </li>
+                    <li>
+                        <h5>Noilly prat</h5>
+                        <p>5 cl</p>
+                    </li>
+                    <li>
+                        <h5>Crème fraîche à 35% MG</h5>
+                        <p>10 cl</p>
+                    </li>
+                    <li>
+                        <h5>Échalote hachée menue (ou 2 petites)</h5>
+                        <p>1</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="separateur"></div>
+            <div>
+                <h2>Instructions</h2>
+                <h5>1.</h5>
+                <p>Si on utilise des fruits de mer surgelés, les laisser d'abord décongeler avant de les cuire.</p>
+                <br>
+                <h5>2.</h5>
+                <p>Peler l'échalote, la hacher menue.</p>
+                <br>
+                <h5>3.</h5>
+                <p>Eplucher les queues de crevettes.</p>
+                <br>
+                <h5>4.</h5>
+                <p>Couper les coraux des noix de Saint-Jacques en petits morceaux.</p>
+                <br>
+                <h5>5.</h5>
+                <p>Verser un peu d'huile d'olive dans une poêle et y faire revenir les noix de pétoncles (pas trop les cuire).</p>
+                <br>
+                <h5>6.</h5>
+                <p>Réserver.</p>
+                <br>
+                <h5>7.</h5>
+                <p>Faire de même avec les queues de crevettes.</p>
+                <br>
+                <h5>8.</h5>
+                <p>Réserver.</p>
+                <br>
+                <h5>9.</h5>
+                <p>Pendant ce temps, préchauffer le four à 180°C (thermostat 6).</p>
+                <br>
+                <h5>10.</h5>
+                <p>Egalement pendant ce temps, prendre un poêlon et y mettre : l'échalote, le vin blanc, le Noilly Prat, les coraux, sel, poivre du moulin.</p>
+                <br>
+                <h5>11.</h5>
+                <p>Faire réduire à feu moyen-fort pour arriver à 1/3 de liquide.</p>
+                <br>
+                <h5>12.</h5>
+                <p>Passer le contenu du poêlon au travers d'un chinois en pressant bien avec le dos d'une cuillère.</p>
+                <br>
+                <h5>13.</h5>
+                <p>Remettre le liquide obtenu dans le poêlon (propre!).</p>
+                <br>
+                <h5>14.</h5>
+                <p>Verser la crème fraîche et faire réduire quelques instants.</p>
+                <br>
+                <h5>15.</h5>
+                <p>Faire épaissir la sauce, mais pas trop, en y incorporant un peu de maïzena diluée dans de l'eau.</p>
+                <br>
+                <h5>16.</h5>
+                <p>Rectifier l'assaisonnement.</p>
+                <br>
+                <h5>17.</h5>
+                <p>Partager les fruits de mer dans deux cassolettes.</p>
+                <br>
+                <h5>18.</h5>
+                <p>Napper de sauce.</p>
+                <br>
+                <h5>19.</h5>
+                <p>Saupoudrez d'une bonne pincée de piment d'Espelette.</p>
+                <br>
+                <h5>20.</h5>
+                <p>Mettre au four à mi-hauteur pendant 5 bonnes minutes pour les réchauffer, et ensuite 5 minutes sur position grill pour faire gratiner.</p>
+                <br>
+                <h5>21.</h5>
+                <p>Servir les cassolettes bien chaudes, décorées d'un brin d'aneth.</p>
+                <br>
+                <h5>22.</h5>
+                <p>Déguster avec du bon pain pour saucer.</p>
+                <br>
+            </div>
+            <div class="separateur"></div>
+            <div>
+                <h2>Commentaires</h2>
+                <form>
+                    <div id="divForm">
+                        <input placeholder="Nom" alt="name" id="InputName">
+                        <input placeholder="E-mail" alt="email" id="InputMail">
+                    </div>
+                    <br>
+                    <textarea placeholder="Votre commentaire" alt="comment" type="text" id="InputComment"></textarea>
+                    <br>
+                    <input type="submit" id="SubmitInput">
+                </form>
+            </div>
+            <div class="UsersComments">
+                <img src="">
+                <div class="UsersInfos">
+                    <h4>Didier Godebert</h4>
+                    <h6>01 janvier 2020</h6>
+                    <p>Je trouve cette recette vraiment incroyable, sachant qu'elle coute seulement 10€.</p>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <script>
+        window.addEventListener("scroll", function() {
+            const header = document.querySelector('header')
+            header.classList.toggle("sticky", window.scrollY > 0)
+        })
+    
+        function toggleMenu() {
+            const menuToggle = document.querySelector('.menuToggle')
+            const navigation = document.querySelector('.navigation')
+            menuToggle.classList.toggle('active')
+            navigation.classList.toggle('active')
+        }
+    </script>
+
+{% block javascripts %}
+{% endblock %}
+
+{% endblock %}

@@ -2,33 +2,40 @@
 
 namespace App\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Entity\Recette;
+use App\Entity\Producteur;
+use App\Repository\RecetteRepository;
+use App\Repository\ProducteurRepository;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class LcdpController extends AbstractController
 {
     #[Route('/', name: 'accueil')]
-    public function accueil(): Response
+    public function accueil(RecetteRepository $recetteRepository, ProducteurRepository $producteurRepository): Response
     {
+        $recettes = $recetteRepository->findAll();
+        $producteurs = $producteurRepository->findAll();
         return $this->render('lcdp/index.html.twig', [
-            'accueil' => 'LcdpController',
+            'recettes' => $recettes,
+            'producteurs' => $producteurs,
         ]);
     }
 
-    #[Route('/recettes', name: 'recettes')]
-    public function recettes(): Response
+    #[Route('/recettes/{id}', name: 'afficher_recette')]
+    public function recettesId(Recette $recette): Response
     {
-        return $this->render('lcdp/index.html.twig', [
-            'controller_name' => 'LcdpController',
+        return $this->render('lcdp/afficher_recette.html.twig', [
+            'recette' => $recette,
         ]);
     }
 
-    #[Route('/producteurs', name: 'producteurs')]
-    public function producteurs(): Response
+    #[Route('/producteurs/{id}', name: 'afficher_producteur')]
+    public function producteursId(Producteur $producteur): Response
     {
-        return $this->render('lcdp/index.html.twig', [
-            'controller_name' => 'LcdpController',
+        return $this->render('lcdp/afficher_producteur.html.twig', [
+            'producteur' => $producteur,
         ]);
     }
 

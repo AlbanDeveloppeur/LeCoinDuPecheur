@@ -4,19 +4,113 @@
 
 {% block body %}
 
-    {% block header %}
-         <img src="../image/MainCover.jpg" alt="">
-
-        <div class="main_cover">
-            <h1>Bienvenue</h1>
-            <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing
-                elit. Sunt et doloribus officia veritatis, quod iure
-                eum earum autem odit dolorem. Animi alias dicta ipsa,
-                id iusto magni deserunt aperiam expedita.
-            </p>
-            <button class="down_scroll" type="button"></button>
+    <section class="banner" id="banner">
+        <div class="content">
+            <h2>Le Coin du Pécheur</h2>
+            <a href="#" class="btn">Réserver une table</a>
+            <a href="#categorie" class="down"></a>
         </div>
-    {% endblock %}
+    </section>
+
+    <!-- Catégorie + Recettes -->
+
+    <section class="categorie" id="categorie">
+        <div class="title">
+            <h2>Les recettes</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+        <div class="content" id="navCat">
+            <div class="box">
+                <div class="imgBx">
+                    <img src="../image/navPlatEntree.png" alt="">
+                </div>
+                <div class="text">
+                    <h3>Entrée</h3>
+                </div>
+            </div>
+            <div class="box">
+                <div class="imgBx">
+                    <img src="../image/navPlatPlatPrincipal.png" alt="">
+                </div>
+                <div class="text">
+                    <h3>Plat</h3>
+                </div>
+            </div>
+            <div class="box">
+                <div class="imgBx">
+                    <img src="../image/navPlatDessert.png" alt="">
+                </div>
+                <div class="text">
+                    <h3>Dessert</h3>
+                </div>
+            </div>
+        </div>
+        <div class="content" id="navCatBis">
+            <div class="box">
+                <div class="imgBx">
+                    <img src="../image/navTypeSalee.png" alt="">
+                </div>
+                <div class="text">
+                    <h3>Salée</h3>
+                </div>
+            </div>
+            <div class="box">
+                <div class="imgBx">
+                    <img src="../image/navTypeSucree.png" alt="">
+                </div>
+                <div class="text">
+                    <h3>Sucrée</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="menu" id="menu">
+        <div class="content">
+        {% for recette in recettes %}
+            <a href="{{ path('afficher_recette',{'id' : recette.id}) }}" class="box">
+                <div class="imgBx">
+                    <img src="{{ asset('image/' ~recette.photo) }}" alt="">
+                </div>
+                <div class="text">
+                    <h3>{{ asset(recette.nom) }}</h3>
+                </div>
+            </a>
+        {% endfor %}
+        </div>
+        <div class="title"><a href="" class="btn">View All</a></div>
+    </section>
+
+    <section class="product" id="product">
+        <div class="content">
+        {% for producteur in producteurs %}
+            <a href="{{ path('afficher_producteur',{'id' : producteur.id}) }}" class="box">
+                <div class="imgBx">
+                    <img src="{{ asset('image/' ~producteur.photo) }}" alt="">
+                </div>
+                <div class="text">
+                    <h3>{{ producteur.nom }} {{ producteur.prenom }}</h3>
+                </div>
+            </a>
+        {% endfor %}
+        </div>
+    </section>
+
+    <script>
+        window.addEventListener("scroll", function() {
+            const header = document.querySelector('header')
+            header.classList.toggle("sticky", window.scrollY > 0)
+        })
+    
+        function toggleMenu() {
+            const menuToggle = document.querySelector('.menuToggle')
+            const navigation = document.querySelector('.navigation')
+            menuToggle.classList.toggle('active')
+            navigation.classList.toggle('active')
+        }
+    </script>
+
+{% block javascripts %}
+{% endblock %}
 
 {% endblock %}

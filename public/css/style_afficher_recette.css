@@ -1,0 +1,286 @@
+@import url('https://fonts.googleapis.com/css2?family=KoHo:wght@200;300;400;500;600;700&display=swap');  
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    color: #111;
+    font-family: 'KoHo', sans-serif;
+    scroll-behavior: smooth;
+    font-weight: 300;
+}
+
+body {
+    scroll-behavior: smooth;
+    height: 10000px;
+}
+
+p {
+    font-weight: 300;
+    color: #111;
+}
+
+.title {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* HEADER */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 40px 100px;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.5s;
+}
+
+header.sticky {
+    background: #fff;
+    padding: 10px 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+}
+
+header.sticky .logo {
+    color: #111;
+}
+
+header .logo {
+    color: #fff;
+    font-weight: 700;
+    font-size: 2em;
+}
+
+header .navigation {
+    position: relative;
+    display: flex;
+}
+
+header .navigation li {
+    list-style: none;
+    margin-left: 30px;
+}
+
+header .navigation li a {
+    color: #fff;
+    font-weight: 400;
+    font-size: 1.3em;
+    transition: 0.5s;
+}
+
+header .navigation li a:hover {
+    letter-spacing: 3px;
+}
+
+header.sticky .navigation li a {
+    color: #111;
+}
+
+.banner {
+    position: relative;
+    width: 100%;
+    min-height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(../image/MainCover.jpg);
+    background-position: bottom 510px right 0;
+}
+
+.banner .content h2 {
+    font-size: 3em;
+    color: #fff;
+    text-shadow: #1D355B 3px 3px 2px;
+}
+
+body {
+    margin: 0;
+}
+
+#topDiv {
+    width: 100%;
+}
+
+#banniere {
+    width: 100%;
+    z-index: 0;
+}
+
+h1 {
+    text-align: center;
+    z-index: 10;
+}
+
+article {
+    margin: 0 auto;
+    width: 80%;
+    border: darkgray 2px solid;
+    padding: 10px;
+    border-radius: 20px;
+    margin-top: 1%;
+    background-color: white;
+}
+
+#imgPlat {
+    text-align: center;
+}
+
+#imgPlat img {
+    width: 85%;
+}
+
+.infosPlats {
+    margin: 0 auto;
+    width: 85%;
+    border: darkgray 2px solid;
+}
+
+#flex {
+    display: flex;
+    flex-direction: column;
+}
+
+.timers {
+    display: inline-flex;
+    justify-content: space-around;
+}
+
+.separateur {
+    border: darkgray solid 1px;
+}
+
+.infosBas {
+    display: flex;
+    justify-content: space-around;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex img {
+    margin-left: 2px;
+}
+
+input {
+    height: 1.5em;
+    font-size: 150%;
+    border: solid lightblue 2px;
+}
+
+#InputName {
+    width: 25%;
+
+}
+
+#InputMail {
+    width: 70%;
+
+}
+
+#InputComment {
+    width: 99.5%;
+    height: 10em;
+    border: solid lightblue 2px;
+}
+
+#SubmitInput {
+    justify-content: right;
+}
+
+#divForm {
+    display: flex;
+    justify-content: space-between;
+}
+
+form {
+    justify-content: space-between;
+}
+
+.UsersComments img{
+    height: 64px;
+    width: 64px;
+    border-radius: 100%;
+    margin: 0.7em;
+}
+
+.UsersComments {
+    display: flex;
+}
+
+.UsersInfos h6{
+    margin-top: 0.01em;
+}
+
+.UsersInfos h4{
+    margin-bottom: 0.01em;
+}
+
+@media (max-width: 991px) {
+
+    header,
+    header.sticky {
+        padding: 10px 20px;
+    }
+
+    header .navigation {
+        display: none;
+    }
+
+    header .navigation.active {
+        width: 100%;
+        height: calc(100% - 60px);
+        position: fixed;
+        top: 60px;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background: #fff;
+    }
+
+    header .navigation li {
+        margin-left: 0;
+    }
+
+    header .navigation li a {
+        color: #111;
+        font-size: 1.6em
+    }
+    
+    .menuToggle {
+        position: relative;
+        width: 40px;
+        height: 40px;
+        background: url(../image/toggle.png);
+        background-size: 30px;
+        background-repeat: no-repeat;
+        background-position: center;
+        cursor: pointer;
+        filter: invert(1);
+    }
+
+    .menuToggle.active {
+        background: url(../image/close.png);
+        background-size: 25px;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    header.sticky .menuToggle {
+        filter: invert(0);
+    }
+
+    
+}
