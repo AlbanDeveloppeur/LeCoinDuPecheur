@@ -14,63 +14,30 @@
     font-weight: 300;
 }
 
-.newletters {
+.commentaire {
     width: 100%;
-    background: #6D9CD4;
     display: flex;
-    justify-content: center;
-    text-align: center;
-    flex-direction: column;
-    padding: 50px 0;
+    text-align: left;
+    justify-content: left;
 }
 
-.newletters h2 {    
-    color: whitesmoke;
-    text-transform: uppercase;
-    font-size: 3em;
-    letter-spacing: 3px;
-    font-weight: 400;
+form {
+    margin: 15px;
+    width: 100%;
 }
 
-.newletters p {
-    color: whitesmoke;
-    font-size: 1.3em;
-    letter-spacing: 2px;
-    font-weight: 300;
+input,
+textarea {
+    margin: 10px;
+    padding: 5px 0 5px 10px;
+    border: 1px solid black;
 }
 
-.newletters strong {
-    color: whitesmoke;
-    font-weight: 500;
+textarea {
+    resize: none;
+    width: 100%;
 }
 
-.newletters form {
-    margin-top: 20px;
-}
-
-.newletters form input {
-    font-size: 1em;
-    font-weight: 400;
-    display: inline-block;
-    padding: 5px 5px;
-    letter-spacing: 2px;
-    transition: 0.5s;
-    border: 3px solid #fff;
-    text-align: center;
-    margin-right: 5px;
-    cursor: pointer;
-}
-
-.newletters form input[type="email"] {
-    width: 300px;
-}
-
-.newletters form input[type="submit"] {
-    color: #fff;
-    padding: 5px 15px;
-    background: #99bee9;
-    margin: 0;
-}
-.newletters form input[type="submit"]:hover {
-    background: #4777A6;
+input {
+    width: 15%;
 }

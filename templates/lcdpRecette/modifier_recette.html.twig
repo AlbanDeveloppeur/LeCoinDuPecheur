@@ -30,7 +30,7 @@
         {{ form_row(form.repos, {"label":"Temps de repos du plat en min :"}) }}
         {{ form_row(form.cuisson, {"label":"Temps de cuisson du plat en min :"}) }}
         {% if isModif %}
-             <a href="{{ path('producteurs') }}" class="btnRetour">Retour</a>
+             <a href="{{ path('recettes') }}" class="btnRetour">Retour</a>
             <input type="submit" value="Modifier">
         {% else %}
              <a href="{{ path('recettes') }}" class="btnRetour">Retour</a>
