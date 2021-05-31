@@ -152,7 +152,16 @@ header.sticky .navigation li a {
     color: #111;
 }
 
-/* Catégorie + recettes */
+/* Catégorie + recettes + producteur*/
+
+#titleHead h2 {
+    font-size: 2.5em;
+}
+
+#titleHead p {
+    margin-top: 10px;
+    font-size: 1.3em;
+}
 
 .categorie .title {
     padding-top: 80px;
@@ -172,12 +181,21 @@ header.sticky .navigation li a {
 }
 
 .categorie .content,
-.menu .content {
+.menu .content,
+.product .content {
     display: flex;
     justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;
     margin-top: 40px;
+}
+
+.menu {
+    padding-top: 75px;
+}
+
+.product {
+    margin-bottom: 50px;
 }
 
 .menu .content {
@@ -198,7 +216,8 @@ header.sticky .navigation li a {
 }
 
 .categorie .content .box,
-.menu .content .box{
+.menu .content .box,
+.product .content .box{
     width: 340px;
     margin: 20px;
     border: 15px solid #fff;
@@ -211,12 +230,14 @@ header.sticky .navigation li a {
 }
 
 .categorie .content .box:hover,
-.menu .content .box:hover {
+.menu .content .box:hover,
+.product .content .box:hover {
     transform: translateY(-10px);
 }
 
 .categorie .content .box .imgBx,
-.menu .content .box .imgBx {
+.menu .content .box .imgBx,
+.product .content .box .imgBx {
     position: relative;
     width: 100%;
     height: 300px;
@@ -227,7 +248,8 @@ header.sticky .navigation li a {
 }
 
 .categorie .content .box .imgBx img,
-.menu .content .box .imgBx img {
+.menu .content .box .imgBx img,
+.product .content .box .imgBx img {
     position: absolute;
     top: 0;
     left: 0;
@@ -237,7 +259,8 @@ header.sticky .navigation li a {
 }
 
 .categorie .content .box .text,
-.menu .content .box .text {
+.menu .content .box .text,
+.product .content .box .text {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -247,16 +270,18 @@ header.sticky .navigation li a {
 }
 
 .categorie .content .box .text h3
-.menu .content .box .text h3 {
+.menu .content .box .text h3,
+.product .content .box .text h3 {
     font-weight: 400;
     color: #111;   
 }
 
-.menu .btn {
+.menu .btn,
+.product .btn {
     font-size: 1em;
     font-weight: 400;
     color: #fff;
-    width: 150px;
+    width: 18%;
     background: #6D9CD2;
     display: inline-block;
     padding: 10px 0;
@@ -273,43 +298,74 @@ header.sticky .navigation li a {
     background: #4777A6;
 }
 
-/* Producteurs */
+/* NewLetters */
 
-.product .content {
+.newletters {
+    width: 100%;
+    background: #6D9CD4;
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
-    flex-direction: row;
-    margin-top: 40px;
+    text-align: center;
+    flex-direction: column;
+    padding: 50px 0;
 }
 
-.product .content .box {
-    width: 250px;
-    margin: 15px;
-}
-
-.product .content .box .imgBx {
-    position: relative;
-    width: 100%;
-    height: 300px;
-}
-
-.product .content .box .imgBx img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.product .content .box .text {
-    padding: 15px 0 5px;
-}
-
-.product .content .box .text h3 {
+.newletters h2 {    
+    color: whitesmoke;
+    text-transform: uppercase;
+    font-size: 3em;
+    letter-spacing: 3px;
     font-weight: 400;
-    color: #111;
+}
+
+.newletters p {
+    color: whitesmoke;
+    font-size: 1.3em;
+    letter-spacing: 2px;
+    font-weight: 300;
+}
+
+.newletters strong {
+    color: whitesmoke;
+    font-weight: 500;
+}
+
+.newletters form {
+    margin-top: 20px;
+}
+
+.newletters form input {
+    font-size: 1em;
+    font-weight: 400;
+    display: inline-block;
+    padding: 5px 5px;
+    letter-spacing: 2px;
+    transition: 0.5s;
+    border: 3px solid #fff;
+    text-align: center;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+#form_email {
+    width: 300px;
+}
+
+.newletters form input[type="submit"] {
+    color: #fff;
+    padding: 5px 15px;
+    background: #99bee9;
+    margin: 0;
+}
+.newletters form input[type="submit"]:hover {
+    background: #4777A6;
+}
+
+/* Footer */
+
+footer {
+    background-color: #418BC8;
+    height: 100px;
 }
 
 @media (max-width: 991px) {

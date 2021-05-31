@@ -4,17 +4,17 @@
 
 {% block body %}
 
+    <!-- Banner -->
     <section class="banner" id="banner">
         <div class="content">
             <h2>Le Coin du Pécheur</h2>
-            <a href="#" class="btn">Réserver une table</a>
-            <a href="#categorie" class="down"></a>
+            <a href="{{ path('reservation') }}" class="btn">Réserver une table</a>
+            <a href="#menu" class="down"></a>
         </div>
     </section>
 
     <!-- Catégorie + Recettes -->
-
-    <section class="categorie" id="categorie">
+    <!-- <section class="categorie" id="categorie">
         <div class="title">
             <h2>Les recettes</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
@@ -63,10 +63,14 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <section class="menu" id="menu">
         <div class="content">
+            <div class="title" id="titleHead">
+                <h2>Les plats du chef !</h2>
+                <p>Retrouver ci-dessous les recettes du chef</p>
+            </div>
         {% for recette in recettes %}
             <div class="box">
                 <div class="imgBx">
@@ -78,23 +82,44 @@
             </div>
         {% endfor %}
         </div>
-        <div class="title"><a href="{{ path("recettes") }}" class="btn">View All</a></div>
+        <div class="title"><a href="{{ path("recettes") }}" class="btn">Toutes les recettes</a></div>
     </section>
 
     <section class="product" id="product">
         <div class="content">
+            <div class="title" id="titleHead">
+                <h2>Les producteurs</h2>
+                <p>Renseignez vous sur les producteurs locaux avec qui je travail.</p>
+            </div>
         {% for producteur in producteurs %}
-            <a href="{{ path('afficher_producteur',{'id' : producteur.id}) }}" class="box">
+            <div class="box">
                 <div class="imgBx">
-                    <img src="{{ asset('image/' ~ producteur.photo) }}" alt="">
+                    <a href="{{ path('afficher_producteur',{'id' : producteur.id}) }}"><img src="{{ asset('image/' ~producteur.photo) }}" alt=""></a>
                 </div>
                 <div class="text">
-                    <h3>{{ producteur.nom }} {{ producteur.prenom }}</h3>
+                    <a href="{{ path('afficher_producteur',{'id' : producteur.id}) }}"><h3>{{ producteur.nom }} {{ producteur.prenom}} </h3></a>
                 </div>
-            </a>
+            </div>
         {% endfor %}
+        <div class="title"><a href="{{ path("producteurs") }}" class="btn">View All</a></div>
         </div>
     </section>
+
+    <!-- NewLetters -->
+    <section class="newletters">
+        <h2>souscrivez à notre newsletter</h2>
+        <p>Inscrivez-vous pour être le premier ou la première à recevoir <br>
+        les dernières nouvelles du <strong>Coin du Pécheur</strong></p>
+        {{ form_start(form)}}
+            {{ form_widget(form.email) }}
+            <input type="submit" value="Ajouter">
+        {{ form_end(form)}}
+    </section>
+
+    <!-- Footer -->
+    <footer>
+
+    </footer>
 
     <script>
         window.addEventListener("scroll", function() {

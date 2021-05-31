@@ -15,7 +15,9 @@ class ProducteursFixture extends Fixture
                      -> setPrenom("Denis")
                      -> setMetier("Marécher")
                      -> setDescription("Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum")
-                     -> setPhoto("navProductMaraicher.png");
+                     -> setPhoto("navProductMaraicher.png")
+                     -> setIllustration1("illustrationContent.jpg")
+                     -> setIllustration2("illustrationContent.jpg");
         $manager->persist($producteur1);
 
         $producteur2 = new Producteur();
@@ -23,7 +25,9 @@ class ProducteursFixture extends Fixture
                      -> setPrenom("Françcois")
                      -> setMetier("Poissonier")
                      -> setDescription("Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum")
-                     -> setPhoto("navProductPoissonier.png");
+                     -> setPhoto("navProductPoissonier.png")
+                     -> setIllustration1("illustrationContent.jpg")
+                     -> setIllustration2("illustrationContent.jpg");
         $manager->persist($producteur2);
 
         $producteur3 = new Producteur();
@@ -31,7 +35,9 @@ class ProducteursFixture extends Fixture
                      -> setPrenom("Antony")
                      -> setMetier("Traiteur")
                      -> setDescription("Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum")
-                     -> setPhoto("navProductTraiteur.png");
+                     -> setPhoto("navProductTraiteur.png")
+                     -> setIllustration1("illustrationContent.jpg")
+                     -> setIllustration2("illustrationContent.jpg");
         $manager->persist($producteur3);
 
         $manager->flush();

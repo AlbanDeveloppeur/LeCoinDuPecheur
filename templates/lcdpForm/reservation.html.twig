@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/style_reservation.css')}}">
+{% endblock %}
+
+{% block title %}Le Coin du Pécheur - Reservation{% endblock %}
+
+{% block body %}
+
+    <section class="banner" id="banner">
+        <div class="content">
+            <h2>Réserver une table</h2>
+        </div>
+    </section>
+
+    <div class="formBx"> 
+    {{ form_start(form)}}
+        {{ form_row(form.nom, {"label":"Votre nom :"}) }}
+        {{ form_row(form.email, {"label":"Votre Mail :"}) }}
+        {{ form_row(form.telephone, {"label":"Votre numéro de téléphone :"}) }}
+        {{ form_row(form.date, {"label":"Date :"}) }}
+        {{ form_row(form.horaire, {"label":"Votre heure d'arriver :"}) }}
+        {{ form_row(form.nombrePersonne, {"label":"Nombre de personne :"}) }}
+        {{ form_widget(form) }} 
+        <div class='navBtn'>
+            <a href="{{ path('accueil') }}" class="btnRetour">Retour</a>
+            <input type="submit" value="Ajouter">
+        </div>
+    {{ form_end(form)}}
+    </div>
+
+{% endblock %}

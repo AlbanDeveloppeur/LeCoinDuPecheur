@@ -1,18 +1,31 @@
 {% extends 'base.html.twig' %}
 
 {% block stylesheets %}
-    <link rel="stylesheet" href="{{ asset('css/style_afficher_recette.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/style_afficher_producteur.css') }}">
 {% endblock %}
 
-{% block title %}Le Coins du Pécheur - {{ asset(producteur.nom) }} {{ asset(producteur.prenom) }}{% endblock %}
+{% block title %}Le Coins du Pécheur - {{ producteur.nom }} {{ producteur.prenom }}{% endblock %}
 
 {% block body %}
 
     <section class="banner" id="banner">
         <div class="content">
-            <h2>{{ asset(producteur.nom) }} {{ asset(producteur.prenom) }}</h2>
+            <h2>{{ producteur.nom }} {{ producteur.prenom }}</h2>
         </div>
     </section>
+
+    <main>
+        <section>
+            <img src="{{ asset('image/' ~producteur.photo) }}" alt="" id="img_producteur">
+            <h1>{{ producteur.nom }} {{ producteur.prenom }}</h1>
+            <h2> {{ producteur.metier }}</h2>
+            <p id="p_1">{{ producteur.description }}</p>
+            <img src="{{ asset('image/' ~producteur.illustration1) }}" alt="">
+            <p>{{ producteur.description }}</p>
+            <img src="{{ asset('image/' ~producteur.illustration2) }}" alt="">
+            <p>{{ producteur.description }}</p>
+        </section>
+    </main>
 
     <script>
         window.addEventListener("scroll", function() {

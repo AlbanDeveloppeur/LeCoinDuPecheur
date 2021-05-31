@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=KoHo:wght@200;300;400;500;600;700&display=swap');  
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    color: #111;
+    font-family: 'KoHo', sans-serif;
+    scroll-behavior: smooth;
+    font-weight: 300;
+}
+
+.newletters {
+    width: 100%;
+    background: #6D9CD4;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 50px 0;
+}
+
+.newletters h2 {    
+    color: whitesmoke;
+    text-transform: uppercase;
+    font-size: 3em;
+    letter-spacing: 3px;
+    font-weight: 400;
+}
+
+.newletters p {
+    color: whitesmoke;
+    font-size: 1.3em;
+    letter-spacing: 2px;
+    font-weight: 300;
+}
+
+.newletters strong {
+    color: whitesmoke;
+    font-weight: 500;
+}
+
+.newletters form {
+    margin-top: 20px;
+}
+
+.newletters form input {
+    font-size: 1em;
+    font-weight: 400;
+    display: inline-block;
+    padding: 5px 5px;
+    letter-spacing: 2px;
+    transition: 0.5s;
+    border: 3px solid #fff;
+    text-align: center;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.newletters form input[type="email"] {
+    width: 300px;
+}
+
+.newletters form input[type="submit"] {
+    color: #fff;
+    padding: 5px 15px;
+    background: #99bee9;
+    margin: 0;
+}
+.newletters form input[type="submit"]:hover {
+    background: #4777A6;
+}

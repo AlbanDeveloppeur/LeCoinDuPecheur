@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/style_recettes.css')}}">
+{% endblock %}
+
+{% block title %}Le Coins du Pécheur - Tout les Producteurs{% endblock %}
+
+{% block body %}
+
+    <section class="banner" id="banner">
+        <div class="content">
+            <h2>Tout les Producteurs</h2>
+        </div>
+    </section>
+
+    <section class="menu" id="menu">
+        <div class="content">
+        {% for producteur in producteurs %}
+            <div class="box">
+                <div class="imgBx">
+                    <a href="{{ path('afficher_producteur',{'id' : producteur.id}) }}"><img src="{{ asset('image/' ~producteur.photo) }}" alt=""></a>
+                </div>
+                <div class="text">
+                    <a href="{{ path('afficher_producteur',{'id' : producteur.id}) }}"><h3>{{ producteur.nom }}</h3></a>
+                    <div class="navModif">
+                        <a href="{{ path('modifier_producteur',{'id' : producteur.id}) }}"><i class="fas fa-pen"></i></a>
+                        <a href="{{ path('supprimer_producteur',{'id' : producteur.id}) }}"><i class="fas fa-times"></i></a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+        <div class="title"><a href="{{ path("ajouter_producteur") }}" class="btn">Ajouter un producteur</a></div>
+    </section>
+
+    <script>
+        window.addEventListener("scroll", function() {
+            const header = document.querySelector('header')
+            header.classList.toggle("sticky", window.scrollY > 0)
+        })
+    
+        function toggleMenu() {
+            const menuToggle = document.querySelector('.menuToggle')
+            const navigation = document.querySelector('.navigation')
+            menuToggle.classList.toggle('active')
+            navigation.classList.toggle('active')
+        }
+    </script>
+
+{% block javascripts %}
+{% endblock %}
+
+{% endblock %}

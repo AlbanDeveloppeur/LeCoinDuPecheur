@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/style_modif_recette.css')}}">
+{% endblock %}
+
+{% block title %}Modification du Producteur : {{ producteur.nom }} {{ producteur.prenom }}{% endblock %}
+
+{% block body %}
+
+    <section class="banner" id="banner">
+        <div class="content">
+        {% if isModif %}
+            <h2>Modifier les informations du Producteur : {{ producteur.nom }} {{ producteur.prenom }}</h2>
+        {% else %}
+            <h2>Ajouter un producteur :<h2>
+        {% endif %}
+        </div>
+    </section>
+
+    <div class="formBx"> 
+    {{ form_start(form)}}
+        {{ form_row(form.nom, {'attr': {'class':'nom'},"label":"Nom du Producteur :"}) }}
+        {{ form_row(form.prenom, {"label":"Prenom du Producteur :"}) }}
+        {{ form_row(form.metier, {"label":"Métier du Producteur :"}) }}
+        {{ form_row(form.description, {"label":"Description du Producteur :"}) }}
+        {{ form_row(form.photo, {"label":"Photo du Producteur :"}) }}
+        {{ form_row(form.illustration1, {"label":"Première illustration de la page Producteur :"}) }}
+        {{ form_row(form.illustration2, {"label":"Deuxième illustration de la page Producteur :"}) }}
+        {{ form_widget(form) }} 
+        {% if isModif %}
+             <a href="{{ path('producteurs') }}" class="btnRetour">Retour</a>
+            <input type="submit" value="Modifier">
+        {% else %}
+             <a href="{{ path('producteurs') }}" class="btnRetour">Retour</a>
+            <input type="submit" value="Ajouter">
+        {% endif %}
+    {{ form_end(form)}}
+    </div>
+
+{% endblock %}
