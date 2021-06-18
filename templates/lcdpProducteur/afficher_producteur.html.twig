@@ -14,18 +14,22 @@
         </div>
     </section>
 
-    <main>
-        <section>
-            <img src="{{ asset('image/' ~producteur.photo) }}" alt="" id="img_producteur">
-            <h1>{{ producteur.nom }} {{ producteur.prenom }}</h1>
-            <h2> {{ producteur.metier }}</h2>
-            <p id="p_1">{{ producteur.description }}</p>
-            <img src="{{ asset('image/' ~producteur.illustration1) }}" alt="">
-            <p>{{ producteur.description }}</p>
-            <img src="{{ asset('image/' ~producteur.illustration2) }}" alt="">
-            <p>{{ producteur.description }}</p>
-        </section>
-    </main>
+    <article>
+        <div id="div-tout">
+            <div id="div-gauche">
+                <img src="{{ asset('image/' ~producteur.photo)}}" alt="" id="img_producteur">
+            </div>
+            <div id="div-droite">
+                <h1>{{ producteur.metier }}</h1>
+                <h2>{{ producteur.nom }} {{ producteur.prenom }}</h2>
+            </div>
+        </div>
+        <p id="p_1">{{ producteur.description }}</p>
+        <img src="{{ asset('image/' ~producteur.illustration1) }}" alt="">
+        <p>{{ producteur.description }}</p>
+        <img src="{{ asset('image/' ~producteur.illustration2) }}" alt="Photographie d'une poissonnerie">
+        <p>{{ producteur.description }}</p>
+    </article>
 
     <script>
         window.addEventListener("scroll", function() {

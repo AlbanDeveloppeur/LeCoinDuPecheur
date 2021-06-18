@@ -19,7 +19,7 @@
     </section>
 
     <div class="formBx"> 
-    {{ form_start(form)}}
+    {{ form_start(form) }}
         {{ form_row(form.nom, {'attr': {'class':'nom'},"label":"Nom du plat :"}) }}
         {{ form_row(form.type, {"label":"Type de plat :"}) }}
         {{ form_row(form.categorie, {"label":"Catégorie du plat :"}) }}
@@ -30,13 +30,13 @@
         {{ form_row(form.repos, {"label":"Temps de repos du plat en min :"}) }}
         {{ form_row(form.cuisson, {"label":"Temps de cuisson du plat en min :"}) }}
         {% if isModif %}
-             <a href="{{ path('recettes') }}" class="btnRetour">Retour</a>
+            <a href="{{ path('recettes') }}" class="btnRetour">Retour</a>
             <input type="submit" value="Modifier">
         {% else %}
              <a href="{{ path('recettes') }}" class="btnRetour">Retour</a>
-            <input type="submit" value="Ajouter">
+                
         {% endif %}
-    {{ form_end(form)}}
+    {{ form_end(form) }}
     </div>
 
 {% endblock %}

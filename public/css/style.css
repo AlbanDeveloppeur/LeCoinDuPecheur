@@ -444,6 +444,22 @@ footer {
     .product .content .box {
         margin: 15px;
     }
+
+    .btn {
+        width: 60%;
+    }
+
+    .menu .btn, .product .btn {
+        width: 50%;
+    }
+
+    .newletters {
+        padding: 20px;
+    }
+
+    #titleHead p {
+        font-size: 1.2em;
+    }
 }
 
 @media (max-width: 481px) {

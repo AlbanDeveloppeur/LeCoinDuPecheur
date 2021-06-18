@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/style_comfirm.css')}}">
+{% endblock %}
+
+{% block title %}Le Coin du Pécheur - Comfirmation{% endblock %}
+
+{% block body %}
+
+    <section class="banner" id="banner">
+        <div class="content">
+            <h2>Merci pour votre réservation</h2>
+        </div>
+    </section>
+
+    <section class="contentBox">
+        <div>
+            <p>Votre réservation a bien été prise en compte, vous recevrez un message vous comfirmant
+            votre réservation. En cas de réponse négative nous vous recontacterons pour planifier un
+            autre moment.</p>
+            <a href="{{ path('accueil') }}" class="btn">Retour</a>
+        </div>
+    </section>
+{% endblock %}

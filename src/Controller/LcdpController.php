@@ -83,7 +83,7 @@ class LcdpController extends AbstractController
     }
 
     #[Route('/supprimer_recette/{id}', name: 'supprimer_recette')]
-    public function supprimerRecette(Recette $recette,  Request $request, EntityManagerInterface $entityManager): Response
+    public function supprimerRecette(Recette $recette, Request $request, EntityManagerInterface $entityManager): Response
     {
         $entityManager->remove($recette);
         $entityManager->flush();
@@ -152,11 +152,18 @@ class LcdpController extends AbstractController
             $entityManager->persist($reservation);
             $entityManager->flush();
             $this->addFlash("Success","La modification a été prise en compte.");
-            return $this->redirectToRoute("accueil");
+            return $this->redirectToRoute("comfirmation");
         }
 
         return $this->render('lcdpForm/reservation.html.twig', [
             'form' => $form->createView(),
+        ]);
+    }
+
+    #[Route('/comfirmation', name: 'comfirmation')]
+    public function comfirm(): Response
+    {
+        return $this->render('lcdpForm/comfirm.html.twig', [
         ]);
     }
     

@@ -10,7 +10,7 @@
 
     <section class="banner" id="banner">
         <div class="content">
-            <h2>Tout les Producteurs</h2>
+            <h2>Tous les Producteurs</h2>
         </div>
     </section>
 
@@ -22,7 +22,7 @@
                     <a href="{{ path('afficher_producteur',{'id' : producteur.id}) }}"><img src="{{ asset('image/' ~producteur.photo) }}" alt=""></a>
                 </div>
                 <div class="text">
-                    <a href="{{ path('afficher_producteur',{'id' : producteur.id}) }}"><h3>{{ producteur.nom }}</h3></a>
+                    <a href="{{ path('afficher_producteur',{'id' : producteur.id}) }}"><h3>{{ producteur.nom }} {{ producteur.prenom }}</h3></a>
                     <div class="navModif">
                         <a href="{{ path('modifier_producteur',{'id' : producteur.id}) }}"><i class="fas fa-pen"></i></a>
                         <a href="{{ path('supprimer_producteur',{'id' : producteur.id}) }}"><i class="fas fa-times"></i></a>
