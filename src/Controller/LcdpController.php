@@ -96,9 +96,9 @@ class LcdpController extends AbstractController
     #[Route('/producteurs', name: 'producteurs')]
     public function producteurs(ProducteurRepository $producteurRepository): Response
     {
-        $producteurs = $producteurRepository->findAll();
+        $producteurs = $producteurRepository->findAll();    
         return $this->render('lcdpProducteur/producteurs.html.twig', [
-            "producteurs" => $producteurs,
+            "producteurs" => $producteurs,  
         ]);
     }
 
